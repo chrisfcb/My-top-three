@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33</title>
+    <style>
+        .box {
+            background-color: gray;
+            height: 60px;
+            width: 60px;
+            margin: 50px 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var bodyEl;
+        var tableEl;
+        var tdEl;
+        var trEl;
+
+        bodyEl = document.querySelector("body");
+
+        tableEl = document.createElement("table")
+        bodyEl.appendChild(tableEl);
+
+        for (x = 0; x < 8; x++) {
+            trEl = document.createElement("tr");
+            trEl.className = "box";
+            tableEl.appendChild(trEl);
+
+            for (i = 0; i < 8; i++) {
+                tdEl = document.createElement("td");
+                if (x % 2 == 0 && i % 2 == 0 || x % 2 != 0 && i % 2 != 0) {
+                    tdEl.style.backgroundColor = "black";
+                }
+                tdEl.className = "box";
+                trEl.appendChild(tdEl);
+            }
+        }
+
+
+        //% for å finne partall/oddetall
+    </script>
+
+</body>
+
+</html>

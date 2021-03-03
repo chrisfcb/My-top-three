@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35</title>
+    <style>
+        .line {
+            width: 256px;
+            height: 25px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var bodyEl;
+        var divEl;
+
+        bodyEl = document.querySelector("body");
+        divEl = document.createElement("div");
+        divEl.className = "line";
+        divEl.addEventListener("click", findColor)
+        bodyEl.appendChild(divEl);
+
+        function findColor(e) {
+            //var xpos = e.clientX;
+            //var ypos = e.clientY;
+            var x = e.offsetX;
+            var color = "rgb(" + x + "," + x + "," + x + ")";
+            divEl.style.backgroundColor = color;
+            console.log(e.offsetX);
+        }
+
+
+    </script>
+
+</body>
+</html>

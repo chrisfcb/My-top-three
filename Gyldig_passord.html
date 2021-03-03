@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyldig passord</title>
+</head>
+
+<body>
+
+    <h1>Gyldig passord</h1>
+
+    <h3>Passordet må inneholde:</h3>
+
+    <ul>
+        <li>Minst 8 tegn</li>
+        <li>Store og sma bokstaver</li>
+        <li>Minst ett tall</li>
+        <li>Minst ett spesialtegn</li>
+    </ul>
+
+    <script>
+        var sjekkPassord = prompt("Skriv inn ditt passord")
+
+        gyldigPassord(sjekkPassord)
+
+        function gyldigPassord(passord) {
+            var storeBokstaver = false;
+            var smaBokstaver = false;
+            var inneholderNummer = false;
+            var inneholderSpesialtegn = false;
+
+            var antallStoreBokstaver = 0;
+            var antallSmaBokstaver = 0;
+            var antallNummer = 0;
+            var antallSpesialtegn = 0;
+
+            for (i = 0; i < passord.length; i++) {
+                if (passord[i] >= 'A' && passord[i] <= 'Z') {
+                    storeBokstaver = true;
+                    antallStoreBokstaver++;
+                } 
+                else if(passord[i] >= 'a' && passord[i] <= 'z') {
+                    smaBokstaver = true;
+                    antallSmaBokstaver++;
+                } 
+                else if(passord[i] >= 0 && passord[i] <= 9) {
+                    inneholderNummer = true;
+                    antallNummer++;
+                } 
+                else {
+                    inneholderSpesialtegn = true;
+                    antallSpesialtegn++;
+                }
+            }
+
+            if(storeBokstaver === true && smaBokstaver === true && inneholderNummer === true && inneholderSpesialtegn === true && passord.length >= 8) {
+                console.log("Passordet er gyldig");
+                console.log("Det inneholder: " + antallStoreBokstaver + " store bokstaver, " + antallSmaBokstaver + " sma bokstaver, "
+                + antallNummer + " nummer, og " + antallSpesialtegn + " spesialtegn.")
+            } 
+            else {
+                console.log("Passordet er ikke gyldig");
+                console.log("Det inneholder: " + antallStoreBokstaver + " store bokstaver, " + antallSmaBokstaver + " sma bokstaver, "
+                + antallNummer + " nummer, og " + antallSpesialtegn + " spesialtegn.")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
